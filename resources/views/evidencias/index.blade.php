@@ -3,10 +3,12 @@
                 Listado de evidencias
     </h2>
     <ul class="grid gap-4 sm:grid-cols-2">
-    @forelse ($evidencias as $id => $evidencia)
-    <x-tarjeta-evidencia-listado :evidencia="$evidencia" :id="$id" />
-    @empty
-        <li>Todavía no hay Evidencias.</li>
-    @endforelse
+        @forelse ($evidencias as $id => $evidencia)
+            <x-tarjeta-evidencia-listado :evidencia="$evidencia" :id="$id" />
+        @empty
+            <li>Todavía no hay Evidencias.</li>
+        @endforelse
     </ul>
+
+    <a href="{{ route('evidencias.create') }}" class="hover:underline">Añadir evidencia</a>
 </x-layout>
